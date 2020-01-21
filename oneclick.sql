@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `profiles`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profiles` (
   `profile_id` int(11) NOT NULL AUTO_INCREMENT,
+  `profile_name` varchar(50) DEFAULT NULL,
   `profile_price` int(11) DEFAULT NULL,
   `profile_description` longtext,
   `profile_image` varchar(50) DEFAULT NULL,
