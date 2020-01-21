@@ -1,0 +1,25 @@
+Potrebno je napraviti web prezentaciju firme koja
+se bavi pružanjem usluga copywriting-a.
+Web sajt treba da sadrži početnu stranicu na kojoj
+su prikazani profili copywriter-a. Svaki profil ima
+sliku, cenu usluge copywriting-a po satu i kratak opis osobe.
+Klikom na profil otvara se profilna
+stranica tog copywriter-a na kojoj se nalazi detaljniji opis kao
+i forma za ostavljanje komentara na taj
+profil.
+
+Potrebno je i da postoji administratorski deo gde postoji mogućnost
+ dodavanja, editovanja i brisanja
+profila. Komentari koji se ostavljaju na profilnoj stranici postaju
+ vidljivi na toj istoj stranici tek nakon
+što budu odobreni od strane administratora, tako da je potrebno
+rešiti i taj admin deo.
+
+Uputstvo:
+- profili i sve što ima veze sa njima (opis, slika, satnica)
+ mogu sadržati lorem ipsum tekstove i neke
+free anonymus slike, to je nebitno za zadatak.
+- za zadatak koristiti 'plain' php, bez framework-a.
+- izgled i stilizaciju stranica raditi po volji, nema posebnih
+ zahteva u vezi sa front-end rešenjem.
+- rešenje postaviti na github i poslati link do repozitorijuma.
