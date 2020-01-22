@@ -15,10 +15,20 @@ $comment = new Comment($db);
 $comments = $comment->getAllComments($id);
 
 
+$countComments=0;
+foreach ($comments as $comment) {
+    if ($comment->is_enabled==0) {
+        $countComments++;
+    }
+}
+
+
+
 
 $template = new Template("../templates/admin_comments.php");
 
 $template->comments = $comments;
+$template->countComments = $countComments;
 
 echo $template;
 
