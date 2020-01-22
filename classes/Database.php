@@ -15,9 +15,9 @@ class Database {
 		$dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
 		// Set options
 		$options = array (
-				PDO::ATTR_PERSISTENT => true,
+//				PDO::ATTR_PERSISTENT => true,
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
-                                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
 		);
 		// Create a new PDO instance
 		try {
@@ -35,6 +35,7 @@ class Database {
            
                
 		$this->stmt = $this->dbh->prepare($query);
+
 	}
 	
 	
@@ -59,7 +60,7 @@ class Database {
 	
 	
 	public function execute(){
-	  //  var_dump($this->stmt);
+	  // var_dump($this->stmt);
 		return $this->stmt->execute();
 	}
 	

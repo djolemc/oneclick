@@ -13,14 +13,14 @@
 
 <p>Dodavanje novog profila:</p>
 
-<?php if (isset($singleProfile)) : ?>
-    <form action="admin.php?edit" method="post">
+<?php //if (isset($singleProfile)) : ?>
+<!--    <form action="admin.php?edit" method="post">-->
 
-        <?php else : ?>
+<!--        --><?php //else : ?>
 
 <form action="admin.php" method="post">
 
-    <?php endif; ?>
+<!--    --><?php //endif; ?>
     Ime:
     <input type="text" name="name" value="<?php if (isset($singleProfile)) echo $singleProfile->profile_name ?>" required>
     <br/>
@@ -28,19 +28,30 @@
     <input type="text" name="price" value="<?php if (isset($singleProfile)) echo $singleProfile->profile_price ?>" required>
     <br/>
     Opis:
-    <textarea  name="description"  required><?php if (isset($singleProfile)) echo $singleProfile->profile_description?></textarea>
+    <textarea  cols="50" rows="10" name="description"  required><?php if (isset($singleProfile)) echo $singleProfile->profile_description?></textarea>
     <br/>
-    <input type="submit"  value="<?php if (isset($singleProfile))   echo 'Izmeni'; else echo  'Unesi'    ?>" name="insert_profile">
+
+    <?php if (isset($singleProfile)) : ?>
+
+     <input type="hidden" name="profile_id" value="<?php echo $singleProfile->profile_id ?>">
+
+    <?php endif ?>
+
+
+    <input type="submit"  value="<?php if (isset($singleProfile))   echo 'Izmeni'; else echo  'Unesi'    ?>" name="<?php if (isset($singleProfile))   echo 'update_profile'; else echo  'insert_profile'?>">
 
 </form>
 
    <table>
 <?php
 
+
+
    foreach ($profiles as $profile) : ?>
         <div>
              ID: <?php echo $profile->profile_id; ?>
-             Description  <?php echo substr($profile->profile_description, 0,50)."..."; ?>
+             Ime: <?php echo $profile->profile_name; ?>
+<!--             Description  --><?php //echo substr($profile->profile_description, 0,50)."..."; ?>
 
 
 
