@@ -28,7 +28,7 @@ class Comment
 
     public function getAllComments($id)
     {
-        $this->database->query("SELECT * FROM `comments` where profile_id=:id");
+        $this->database->query("SELECT * FROM `comments` where profile_id=:id order by created desc");
         $this->database->bind(':id', $id);
         return $this->database->resultset();
     }

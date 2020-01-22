@@ -15,7 +15,6 @@ if (isset($_GET['action'])) {
     $id = $_GET['id'];
     $profile->deleteProfile($id);
     $msg = "Uspešno ste obrisali profil";
-    echo $msg;
 
 }
 
@@ -35,6 +34,7 @@ if (isset($_GET['update'])) {
  * TODO prebaciti dodelu varijabliu klasu
  */
 if (isset($_POST['insert_profile'])) {
+//    var_dump($_POST);
     $name = $_POST['name'];
     $price = $_POST['price'];
     $description = $_POST['description'];

@@ -1,8 +1,74 @@
 .profile_image {
+    position: relative;
+    left: 0;
     width: 80px;
-    /*height: 200px;*/
+ float: left;
+}
+.round {
+    border-radius: 30px;
+    width: 130px;
+}
+#price {
+    font-size: 72px;
+    font-weight: bolder;
+    padding-left: 50px;
+    text-align: center;
 }
 
 .comment {
-    border: 1px solid black;
+   padding: 5px;
+    margin-bottom: 5px;
+    background: lightblue;
+    /*border: 1px solid black;*/
+}
+
+#comment_title {
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+.profile {
+
+
+    margin-top: 50px;
+    background-color: lightgrey;
+
+}
+
+.box{
+    box-model: border-box;
+    border: 5px solid transparent;
+    background-clip:padding-box;
+}
+
+
+.description_short {
+    padding: 15px;
+}
+
+#name {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.comments {
+    margin-top: 20px;
+    border: 1px solid gray;
+    margin-bottom: 5px;
+}
+.date_created {
+    background-color: cadetblue;
+    text-align: right;
+    font-size: 12px;
+    margin: 0;
+}
+.comment_body {
+    margin: 0;
+}
+
+.profile_name {
+    font-size: 26px;
+    font-weight: bolder;
 }

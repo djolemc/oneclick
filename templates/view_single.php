@@ -1,37 +1,67 @@
+<div id="name" class="row">
+    <div class="col-md-12">
+        <p><?php echo $profile->profile_name; ?></p>
+    </div>
+</div>
+
+<div class="row">
 
 
-<img class="profile_image" src="../assets/images/<?php echo $profile->profile_image; ?>">
-<p><?php echo $profile->profile_name; ?></p>
-<p><?php echo $profile->profile_description?></p>
-<p><?php echo $profile->profile_price; ?></p>
+    <div class="col-md-6">
+        <div class="col-sm-2">
+            <img class="profile_image round" src="../assets/images/<?php echo $profile->profile_image; ?>">
+        </div>
+        <div class="col-sm-10">
+            <p id="price"><?php echo $profile->profile_price; ?>e/h</p>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <p><?php echo $profile->profile_description ?></p>
+    </div>
+</div>
 
 
-<?php if (isset($comments))  : ?>
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <p id="comment_title">Komentari:</p>
+        <?php if (isset($comments))  : ?>
+            <?php foreach ($comments as $comment) : ?>
+                <?php if ($comment->is_enabled == 1) : ?>
+                    <div class="comments">
+                        <p class="date_created">Objavljeno: <?php echo $comment->created; ?></p>
+                        <p class="comment_body"><?php echo $comment->comment_text; ?></p>
+                    </div>
+                <?php endif; endforeach ?>
+        <?php endif ?>
 
-    <?php foreach ($comments as $comment) : ?>
 
-    <?php if ($comment->is_enabled == 1) : ?>
-
-        <p><?php echo $comment->created;?></p>
-        <p><?php echo $comment->comment_text;?></p>
-
-
-    <?php endif; endforeach ?>
+    </div>
+</div>
 
 
 
-<?php endif ?>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <form action="comments.php" method="post">
+            <div class="form-group">
+                <label for="comment">Dodaj komentar</label>
+                <textarea class="form-control" id="comment" placeholder="Komentar..." cols="100" rows="5"
+                          name="comment_text" required></textarea>
+            </div>
+            <input type="hidden" name="profile_id" value="<?php echo $profile->profile_id ?>">
+            <input type="submit" class="btn btn-primary" name="dodaj_komentar" value="Dodaj komentar">
 
-<?php if (isset($_SESSION['msg'])) echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    ?>
-
-<form action="comments.php" method="post">
-
-    <label for="comment">Dodaj komentar</label><br>
-        <textarea  id="comment" cols="100" rows="5" name="comment_text"  required></textarea>
-
-    <input type="hidden" name="profile_id" value="<?php echo $profile->profile_id ?>">
-    <br>
-    <input type="submit" name="dodaj_komentar" value="Dodaj komentar">
-</form>
+        </form>
+    </div>
+</div>
+<br>
+<div id="msg" class="row">
+    <div class="col-md-8 offset-2">
+        <?php if (isset($_SESSION['msg'])) {
+            echo "<span class='alert alert-success'>" . $_SESSION['msg'] . "</span>";
+            unset($_SESSION['msg']);
+        }
+        ?>
+    </div>
+</div>
