@@ -21,7 +21,7 @@ class Profile
         $this->price = $_POST['price'];
         $this->name = $_POST['name'];
         $this->description = $_POST['description'];
-        $this->image = rand(1, 3) . ".jpg";
+        $this->image = rand(1, 4) . ".jpg";
 
         $this->database->query('INSERT INTO profiles (profile_name, profile_price, profile_description, profile_image) VALUES (:name, :price, :description, :image)');
         $this->database->bind(':name', $this->name);
