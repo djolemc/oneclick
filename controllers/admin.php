@@ -58,8 +58,6 @@ if (isset($_POST['update_profile'])) {
 
 
 
-
-
 $profiles = $profile->readAllProfiles();
 
 $template->msg = $msg;

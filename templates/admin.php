@@ -58,7 +58,7 @@
 
           <a href='admin.php?id=<?php echo $profile->profile_id?>&update'>Izmeni </a>
           <a onclick="return confirm('Da li ste sigurni da želite da obrišete ovaj profil?')"  href='admin.php?id=<?php echo $profile->profile_id?>&action=delete'>Obrisi </a>
-
+          <a href='admin_comments.php?id=<?php echo $profile->profile_id?>'>Pogledaj komentare</a>
         </div>
    <br>
 
