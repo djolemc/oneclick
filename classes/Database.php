@@ -1,4 +1,10 @@
 <?php
+/*
+ * PDO konekcija za bazu
+ * Parametri se podesavaju u fajlu config/config.php
+ */
+
+
 
 class Database {
 	private $host = DB_HOST;

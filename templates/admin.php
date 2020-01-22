@@ -1,21 +1,15 @@
-
-    <?php if ($msg != '') : ?>
-<div id='msg' class="row alert alert-success">
-    <div class="col-md-6 offset-md-2 msg">
-
-          <?php  echo $msg; ?>
-
-
+<?php if ($msg != '') : ?>
+    <div id='msg' class="row alert alert-success">
+        <div class="col-md-6 offset-md-2 msg">
+            <?php echo $msg; ?>
+        </div>
     </div>
-</div>
-    <?php endif ?>
+<?php endif ?>
 
 
 <div class="card mt-5">
     <div class="card-body">
         <h5 class="card-title">Dodavanje novog profila:</h5>
-
-
         <div class="row">
             <div class="col md-6 offset-2">
                 <form action="admin.php" method="post">
@@ -27,12 +21,9 @@
                     <div class="form-group">
                         <input type="number" class="form-control" placeholder="Unesite cenu po satu" name="price"
                                value="<?php if (isset($singleProfile)) echo $singleProfile->profile_price ?>" required>
-
                     </div>
 
-
                     <div class="form-group">
-
                         <textarea class="form-control" cols="30" rows="5" placeholder="Podaci o profilu"
                                   name="description"
                                   required><?php if (isset($singleProfile)) echo $singleProfile->profile_description ?></textarea>
@@ -60,16 +51,11 @@
 <div class="card mt-5">
     <div class="card-body">
         <h5 class="card-title">Profili u bazi:</h5>
-
-
         <?php
-
-
         foreach ($profiles as $profile) : ?>
             <div>
 
                 <p class="profile_name"><?php echo $profile->profile_name; ?></p>
-
                 <a class="btn btn-success" href='admin.php?id=<?php echo $profile->profile_id ?>&update'>Izmeni </a>
                 <a class="btn btn-danger"
                    onclick="return confirm('Da li ste sigurni da želite da obrišete ovaj profil?')"
@@ -78,8 +64,6 @@
                     komentare</a>
             </div>
             <br>
-
-
         <?php endforeach; ?>
         </table>
 

@@ -8,7 +8,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-
+        <title>OneClick</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  crossorigin="anonymous"></script>
@@ -20,6 +20,11 @@ and open the template in the editor.
 
     <body>
 
+
+    <div class="header">
+      <img id="logo" src="../assets/images/logo.png">
+    </div>
+<!--    <div class="container-fluid">-->
 
 
 

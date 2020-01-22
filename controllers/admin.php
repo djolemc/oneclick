@@ -1,6 +1,5 @@
 <?php require '../config/init.php';
 
-
 $db = new Database();
 $profile = new Profile($db);
 $template = new Template("../templates/admin.php");
@@ -18,10 +17,10 @@ if (isset($_GET['action'])) {
 
 }
 
-
 /*
  * Cita jedan profil iz baze i prosledjuje na template
  */
+
 if (isset($_GET['update'])) {
     $id = $_GET['id'];
     $singleProfile = $profile->getSingleProfile($id);
@@ -30,15 +29,10 @@ if (isset($_GET['update'])) {
 
 
 /*
- * Snima profil u bazu
- * TODO prebaciti dodelu varijabliu klasu
+ * Snima nov profil u bazu
  */
 if (isset($_POST['insert_profile'])) {
-//    var_dump($_POST);
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $profile->insertProfile($name, $price, $description);
+    $profile->insertProfile();
     $msg = "Uspešno ste uneli nov profil";
 }
 
@@ -48,18 +42,14 @@ if (isset($_POST['insert_profile'])) {
 
  */
 if (isset($_POST['update_profile'])) {
-    $profile_id=$_POST['profile_id'];
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $profile->updateProfile($name, $price, $description, $profile_id);
+    $profile_id = $_POST['profile_id'];
+    $profile->updateProfile($profile_id);
     $msg = "Uspešno ste izmenili profil";
 }
 
 
 
 $profiles = $profile->readAllProfiles();
-
 $template->msg = $msg;
 $template->profiles = $profiles;
 

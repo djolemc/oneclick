@@ -5,8 +5,6 @@
 </div>
 
 <div class="row">
-
-
     <div class="col-md-6">
         <div class="col-sm-2">
             <img class="profile_image round" src="../assets/images/<?php echo $profile->profile_image; ?>">
@@ -14,7 +12,6 @@
         <div class="col-sm-10">
             <p id="price"><?php echo $profile->profile_price; ?>e/h</p>
         </div>
-
     </div>
     <div class="col-md-6">
         <p><?php echo $profile->profile_description ?></p>
@@ -34,18 +31,15 @@
                     </div>
                 <?php endif; endforeach ?>
         <?php endif ?>
-
-
     </div>
 </div>
-
 
 
 <div class="row">
     <div class="col-md-8 offset-2">
         <form action="comments.php" method="post">
             <div class="form-group">
-                <label for="comment">Dodaj komentar</label>
+
                 <textarea class="form-control" id="comment" placeholder="Komentar..." cols="100" rows="5"
                           name="comment_text" required></textarea>
             </div>

@@ -31,9 +31,11 @@
 
 .profile {
 
+    border :1px solid lightblue !important;
+    box-shadow: 5px 5px 15px lightgrey;
 
     margin-top: 50px;
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
 
 }
 
@@ -45,7 +47,7 @@
 
 
 .description_short {
-    padding: 15px;
+   margin-bottom: 15px;
 }
 
 #name {
@@ -71,4 +73,21 @@
 .profile_name {
     font-size: 26px;
     font-weight: bolder;
+}
+
+.header {
+
+    height: 64px;
+    background-color: lightblue;
+}
+
+.footer {
+    margin-top: 20px;
+    height: 64px;
+    background-color: rgba(19,15,55,0.72);
+}
+
+#logo {
+    height: 64px;
+    margin-left: 100px;
 }

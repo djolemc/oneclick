@@ -4,9 +4,9 @@
 
 </div>
 
-<footer>
+<footer class="footer">
     
-    <!--<p>Ovo je footer </p>-->
+    <p>Ovo je footer </p>
     
 </footer>
 
